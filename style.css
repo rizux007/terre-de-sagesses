@@ -9,7 +9,7 @@ a {
   text-decoration: none;
   color: #fff;
 }
-/* Header */
+
 /* Header */
 header {
   height: 100vh;
@@ -39,7 +39,7 @@ header {
         rgba(0, 0, 0, 0)
       ),
       url("assets/accueil2.jpg");
-    background-size: cover; /* ensure the background image covers the entire header without distortion */
+    background-size: cover;
     background-position: center;
   }
   25% {
@@ -56,7 +56,7 @@ header {
         rgba(0, 0, 0, 0)
       ),
       url("assets/accueil1.jpg");
-    background-size: cover; /* ensure the background image covers the entire header without distortion */
+    background-size: cover;
     background-position: center;
   }
   50% {
@@ -73,7 +73,7 @@ header {
         rgba(0, 0, 0, 0)
       ),
       url("assets/accueil2.jpg");
-    background-size: cover; /* ensure the background image covers the entire header without distortion */
+    background-size: cover;
     background-position: center;
   }
   75% {
@@ -90,7 +90,7 @@ header {
         rgba(0, 0, 0, 0)
       ),
       url("assets/accueil1.jpg");
-    background-size: cover; /* ensure the background image covers the entire header without distortion */
+    background-size: cover;
     background-position: center;
   }
 }
@@ -99,8 +99,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1% 6%;
-  /* position: fixed; */
+  padding: 1% 10%;
 }
 
 nav .nav-items {
@@ -203,8 +202,6 @@ header .nav-text h3 {
   font-weight: 500;
 }
 
-/* ... (le reste de ton CSS) */
-
 /* Menu Toggle Button */
 .menu-toggle {
   display: none;
@@ -224,38 +221,47 @@ header .nav-text h3 {
 @media screen and (max-width: 1013px) {
   nav {
     padding: 1% 4%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
   }
 
   .menu-toggle {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: all 0.3s ease;
   }
 
   .nav-items {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #3deefa;
-    background-image: linear-gradient(
-        to bottom,
-        rgba(212, 177, 201, 1),
-        rgba(212, 177, 201, 0.5) 30%,
-        rgba(212, 177, 201, 0)
-      ),
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0.5) 10%,
-        rgba(0, 0, 0, 0)
-      );
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+    width: 50%;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
-    display: none;
+    display: flex;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-items.active {
+    left: 0;
   }
 
   .nav-items ul {
     flex-direction: column;
     width: 100%;
+    padding: 0;
   }
 
   .nav-items ul li {
@@ -267,16 +273,20 @@ header .nav-text h3 {
     padding: 15px;
     display: block;
     width: 100%;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
   }
 
-  .nav-items.active {
-    display: flex;
+  .nav-items ul li a:hover {
+    background-color: #f0f0f0;
   }
 }
 
 /* Main content */
 main {
   padding: 20px;
+  overflow-x: hidden;
 }
 
 .intro {
@@ -326,7 +336,6 @@ main {
 }
 
 /*  VOYAGES PART  */
-
 .voyages {
   display: flex;
   align-items: center;
@@ -437,6 +446,7 @@ main {
 @media screen and (max-width: 1013px) {
   main {
     padding: 10px;
+    overflow-x: hidden;
   }
 
   .intro {
@@ -448,7 +458,7 @@ main {
   }
 
   .intro .intro-description {
-    width: 50%;
+    width: 100%;
     text-align: center;
   }
 
@@ -468,9 +478,9 @@ main {
   }
 
   .voyage img {
-    width: 50%;
+    width: 100%;
     height: auto;
-    max-width: 100%; /* S'assure que l'image ne dépasse pas 100% de la largeur du conteneur */
+    max-width: 100%;
   }
 
   .linecenter {
@@ -494,8 +504,9 @@ main {
     justify-content: center;
     text-align: center;
   }
+
   .voyage-container .voyage-info p {
-    width: 350px;
+    width: 100%;
     text-align: center;
   }
 
