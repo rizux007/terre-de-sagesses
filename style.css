@@ -13,7 +13,9 @@ a {
 li {
   list-style: none;
 }
-
+sup{
+  font-size: 10px;
+}
 /* Header */
 header {
   height: 100vh;
@@ -22,9 +24,14 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: background-image 1s ease-in-out, background-size 1s ease-in-out;
+  transition: background-image 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
-
+header.active {
+  transform: scale(1.1);
+  opacity: 0;
+}
 nav {
   display: flex;
   justify-content: center;
@@ -61,7 +68,7 @@ nav .nav-items ul li {
 }
 
 nav .nav-items ul .language {
-  /* margin-left: 3rem; */
+  /* margin-left: 40px; */
 }
 
 nav .nav-items ul .language a {
@@ -90,6 +97,7 @@ nav .nav-logo img {
 }
 
 .mobile-design {
+  display: none;
   position: absolute;
   top: 0;
   right: -250px;
@@ -224,7 +232,6 @@ header .nav-text h3 {
 /* Responsive Styles */
 @media (max-width: 1013px) {
   nav {
-    /* top: 0; */
     transition: all 0.3s ease-in-out;
     width: 100%;
   }
@@ -350,7 +357,6 @@ main {
 /*  VOYAGES PART  */
 .voyages {
   display: flex;
-  /* background-color: red; */
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 50px;
@@ -454,9 +460,6 @@ main {
 
 .voyage-container .voyage-info p {
   font-family: "Jost", sans-serif;
-  /* width: 50px; */
-  /* border: 2px solid; */
-  /* padding: 0 6rem; */
   margin: 0.5rem 0;
 }
 
@@ -525,8 +528,7 @@ main {
     align-items: center;
   }
   .voyage-info p {
-    width: 60%;
-    flex-wrap: wrap;
+    width: 50%;
     text-align: center;
   }
 
