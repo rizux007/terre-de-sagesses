@@ -213,6 +213,7 @@ header .nav-text h3 {
 /* Responsive Styles */
 @media (max-width: 1013px) {
   nav {
+    top: 0;
     transition: all 0.3s ease-in-out;
     width: 100%;
   }
@@ -236,15 +237,15 @@ header .nav-text h3 {
   .sidebar {
     top: -100%;
     left: 0;
+    right: 0;
     width: 100%;
     height: 100vh;
-    /* position: fixed; */
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    position: fixed;
     transition: all 0.3s ease;
     z-index: 1000;
   }
