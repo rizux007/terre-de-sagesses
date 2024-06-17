@@ -28,7 +28,7 @@ document.getElementById("nextSlide").addEventListener("click", (e) => {
 
 document.getElementById("prevSlide").addEventListener("click", (e) => {
   e.preventDefault();
-  prevSlide();
+  nextSlide();
 });
 
 setInterval(nextSlide, 5000);
@@ -36,5 +36,15 @@ setInterval(nextSlide, 5000);
 changeBackgroundImage(currentIndex);
 
 document.getElementById("mobile-menu").addEventListener("click", function () {
-  document.getElementById("mobile-sidebar").classList.toggle("active");
+  const mobileSidebar = document.getElementById("mobile-sidebar");
+  const body = document.body;
+
+  mobileSidebar.classList.toggle("active");
+  this.classList.toggle("active");
+
+  if (mobileSidebar.classList.contains("active")) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "";
+  }
 });
