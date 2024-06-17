@@ -15,36 +15,57 @@
   <body>
     <header>
       <nav>
-        <div class="nav-items left" id="nav-left">
-          <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Qui suis-je ?</a></li>
-            <li><a href="#">Programmes</a></li>
-            <li><a href="#">Soutenir</a></li>
-          </ul>
-          
+        <div class="desktop-design">
+          <div class="nav-items left" id="nav-left">
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">Qui suis-je ?</a></li>
+              <li><a href="#">Programmes</a></li>
+              <li><a href="#">Soutenir</a></li>
+            </ul>
+          </div>
+          <div class="nav-logo">
+            <a href="#"><img src="assets/sd.svg" alt="Logo" /></a>
+          </div>
+          <div class="nav-items right" id="nav-right">
+            <ul>
+              <li><a href="#">Médécine de la terre</a></li>
+              <li><a href="#">Nicelab</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+              <li class="language">
+                <a href="#">FR <span> - EN</span> </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="nav-logo">
-          <a href="#"><img src="assets/sd.svg" alt="Logo" /></a>
-        </div>
-        <div class="nav-items right" id="nav-right">
-          <ul>
-            <li><a href="#">Médécine de la terre</a></li>
-            <li><a href="#">Nicelab</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-            <li class="language">
-              <a href="#">Fr <span>-</span> En</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="menu-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <div class="mobile-design">
+          <div class="nav-logo">
+            <a href="#"><img src="assets/sd.svg" alt="Logo" /></a>
+          </div>
+          <!-- <div class="nav-items sidebar left" id="mobile-sidebar"> -->
+          <div class="sidebar left" id="mobile-sidebar">
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">Qui suis-je ?</a></li>
+              <li><a href="#">Programmes</a></li>
+              <li><a href="#">Soutenir</a></li>
+              <li><a href="#">Médécine de la terre</a></li>
+              <li><a href="#">Nicelab</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+              <li class="language">
+                <a href="#">Fr <span>- En</span> </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
       <div class="nav-text">
         <div class="line"></div>
         <p class="programme"><span class="programme-inner">Progr</span>amme</p>
@@ -53,13 +74,14 @@
           les HuniKui et les Puyanawa
         </h3>
         <div class="description">
-          <a id="prevSlide" href="#"
-            ><img src="assets/arrow-left-svgrepo-com.svg" alt=""
+          <a id="prevSlide" class="nav-arrow" href="#"
+            ><img src="assets/arrow-left-svgrepo-com.svg" alt="Previous"
           /></a>
-          <a id="nextSlide" href="#"
-            ><img src="assets/arrow-right-svgrepo-com.svg" alt=""
+          <a id="nextSlide" class="nav-arrow" href="#"
+            ><img src="assets/arrow-right-svgrepo-com.svg" alt="Next"
           /></a>
         </div>
+
         <p>15 Avril au 1<span>er</span> Mai 2022</p>
         <button>INSCRIVEZ-VOUS</button>
         <div class="line2"></div>

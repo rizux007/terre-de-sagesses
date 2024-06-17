@@ -1,24 +1,40 @@
+const images = ["assets/accueil2.jpg", "assets/accueil1.jpg"];
 
+let currentIndex = 0;
 
-// const menuToggle = document.getElementById('mobile-menu');
-// const navItems = document.querySelector('.nav-items');
+function changeBackgroundImage(index) {
+  const header = document.querySelector("header");
+  header.style.backgroundImage = `
+      linear-gradient(to bottom, rgba(212, 177, 201, 1), rgba(212, 177, 201, 0.5) 30%, rgba(212, 177, 201, 0)),
+      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0)),
+      url(${images[index]})
+    `;
+}
 
-// menuToggle.addEventListener('click', () => {
-//   navItems.classList.toggle('active');
-// });
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % images.length;
+  changeBackgroundImage(currentIndex);
+}
 
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  changeBackgroundImage(currentIndex);
+}
 
+document.getElementById("nextSlide").addEventListener("click", (e) => {
+  e.preventDefault();
+  nextSlide();
+});
 
-// Récupération du bouton de toggle du menu
-const menuToggle = document.getElementById('mobile-menu');
+document.getElementById("prevSlide").addEventListener("click", (e) => {
+  e.preventDefault();
+  prevSlide();
+});
 
-// Récupération des éléments de navigation gauche et droite
-const navLeft = document.getElementById('nav-left');
-const navRight = document.getElementById('nav-right');
+setInterval(nextSlide, 5000);
 
-// Ajout d'un événement clic sur le bouton de toggle du menu
-menuToggle.addEventListener('click', () => {
-    // Toggle de la classe active sur les éléments de navigation
-    navLeft.classList.toggle('active');
-    navRight.classList.toggle('active');
+changeBackgroundImage(currentIndex);
+
+document.getElementById("mobile-menu").addEventListener("click", function () {
+  document.getElementById("mobile-sidebar").classList.toggle("active");
 });
